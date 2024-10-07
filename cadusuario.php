@@ -1,0 +1,90 @@
+<?php 
+include('conexao.php');
+
+if(isset($_POST['username']) || isset($_POST['senha'])){
+    if(strlen($_POST['username'])==0){
+        print "Preencha o campo nome de usuário";
+    } 
+    else if(strlen($_POST['senha'])==0){
+        print "Preencha o campo sua senha";
+    }
+    else {
+        $username = $mysqli->real_escape_string($_POST['username']);
+        $senha = $mysqli->real_escape_string($_POST['password']);
+        $sql_code = "SELECT * FROM users WHERE username = '$username' AND senha = '$senha'";
+        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
+        $quantidade = $sql_query->num_rows;
+
+        if($quantidade == 1){
+            print "Usuário já existente, tente novamente";       
+        }
+        else{
+            //header("Location: cadastro.php");
+        }
+    }    
+}
+
+
+?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>cadastro_de_usuario</title>
+</head>
+<body>
+    <h1>Cadastro de Usuário</h1>
+    <div class="form-container">
+        <form action="cadastro.php" method="POST">
+           <!--USERNAME -->
+            <div class="form-group">
+                <label for="username">Nome de usuário:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <!--senha-->
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <!--Confirme Password -->
+            <div class="form-group">
+                <label for="confirm-password">Confirme a Senha:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <!--Email -->
+            <div class="form-group">
+                <label for="email">Escreva seu e-mail:</label>
+                <input type="email" id="email" name="email" requeried>
+            </div>
+            <!--First_Name -->
+            <div class="form-group">
+                <label for="first_name">Escreva seu primeiro nome:</label>
+                <input type="text" id="first_name" name="first_name">
+            </div>
+            <!--Last_Name -->
+            <div class="form-group">
+                <label for="last_name">Escreva seu primeiro nome:</label>
+                <input type="text" id="last_name" name="last_name">
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+    <h2>Caso já seja cliente favor fazer login no sistema clicando no <a href="index.php">link</a></h2>
+    <div class="data-hora">
+        <?php 
+            date_default_timezone_set("America/Sao_Paulo");
+            print "Hoje é dia " . date("d:M:Y ");
+            print "e a hora atual é " . date("G:i:s");
+        ?>
+    </div>
+</body>
+</html>
