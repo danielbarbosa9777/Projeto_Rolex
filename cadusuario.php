@@ -1,35 +1,3 @@
-<?php 
-include('conexao.php');
-
-if(isset($_POST['username']) || isset($_POST['senha'])){
-    if(strlen($_POST['username'])==0){
-        print "Preencha o campo nome de usuário";
-    } 
-    else if(strlen($_POST['senha'])==0){
-        print "Preencha o campo sua senha";
-    }
-    else {
-        $username = $mysqli->real_escape_string($_POST['username']);
-        $senha = $mysqli->real_escape_string($_POST['password']);
-        $sql_code = "SELECT * FROM users WHERE username = '$username' AND senha = '$senha'";
-        $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL" . $mysqli->error);
-        $quantidade = $sql_query->num_rows;
-
-        if($quantidade == 1){
-            print "Usuário já existente, tente novamente";       
-        }
-        else{
-            //header("Location: cadastro.php");
-        }
-    }    
-}
-
-
-?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

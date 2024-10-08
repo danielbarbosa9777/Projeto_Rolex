@@ -14,8 +14,8 @@
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Recebe os dados do formulário
                 $username = $_POST['username'];
-                $email = $_POST['email'];
                 $senha = $_POST['senha'];
+                $email = $_POST['email'];
                 $last_name = $_POST['last_name'];
                 $first_name = $_POST['first_name'];
             
