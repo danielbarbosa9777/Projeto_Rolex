@@ -29,7 +29,7 @@
                  if ($result->num_rows > 0) {
                      echo "Usuário ou e-mail já cadastrado!";
                      // Redireciona para outra página após 3 segundos
-                    header("refresh:3;url=cadusuario.php");
+                    header("refresh:5;url=cadusuario.php");
                  } else {
                      // Hash da senha para segurança
                      $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
@@ -43,9 +43,12 @@
                  
                      // Executa a query e verifica se foi bem-sucedida
                      if ($stmt->execute()) {
-                         echo "Novo registro criado com sucesso!";
+                        echo "Novo registro criado com sucesso!";
+                        $nome = $_POST["first_name"];
+                        $senha = $_POST["senha"];
+                        print "Olá $nome, sua senha é $senha";
                      } else {
-                         echo "Erro: " . $sql . "<br>" . $mysqli->error;
+                        echo "Erro: " . $sql . "<br>" . $mysqli->error;
                      }
                  
                      // Fecha a consulta
@@ -57,9 +60,6 @@
                  $mysqli->close();
              }
  
-             $nome = $_POST["first_name"];
-             $senha = $_POST["senha"];
-             print "Olá $nome, sua senha é $senha";
          ?>
          <p><a href="index.php">LOGIN</a></p>
      </main>
