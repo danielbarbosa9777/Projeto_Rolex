@@ -1,20 +1,20 @@
 @charset "UTF-8";
 body {
-   
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    background-image: linear-gradient(to right,#D9D6D0, #8C6432, #402617,#593825);
+    background-image: linear-gradient(to right, #505A77, #5C5279); /* Azul marinho */
     display: flex;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    color: white; /* Texto branco */
 }
+
 .data-hora {
     position: absolute;
     bottom: 10px; /* Distância do canto inferior */
@@ -25,54 +25,61 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    color: #001f3f; /* Texto azul marinho */
 }
-h1{
-    color: snow;
+
+h1, h2 {
+    color: white; /* Texto branco */
 }
-h2{
-    color: snow;
-}
-main{
-    color: snow;
+
+main {
+    color: white; /* Texto branco */
     font-weight: bold;
     font-size: larger;
 }
-.texto-vermelho{
-    color:red;
+
+.texto-vermelho {
+    color: red;
 }
 
 .form-container {
     justify-content: center;
-    background-color: #8C6E5D;
+    background-color: #001f3f; /* Fundo azul marinho */
     padding: 50px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.795);
-    
 }
+
 .form-container h2 {
     margin-bottom: 15px;
 }
+
 .form-group {
     margin-bottom: 15px;
 }
+
 .form-group label {
     display: block;
     margin-bottom: 5px;
+    color: white; /* Texto branco */
 }
+
 .form-group input {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 .form-group button {
-    background-color: #4CAF50;
+    background-color: #0074D9; /* Azul */
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
 }
+
 .form-group button:hover {
-    background-color: #45a049;
+    background-color: #005bb5; /* Azul mais escuro */
 }

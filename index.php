@@ -65,7 +65,7 @@ if(isset($_POST['username']) || isset($_POST['senha'])){
             </div>
         </form>
     </div>
-    <p>Caso não tenha login clique no <a href="cadusuario.php">link</a> para criar</p>
+    <p>Caso não tenha login clique <a href="cadusuario.php">aqui</a> para criar</p>
 
 
     

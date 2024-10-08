@@ -46,7 +46,7 @@
             </div>
         </form>
     </div>
-    <h2>Caso já seja cliente favor fazer login no sistema clicando no <a href="index.php">link</a></h2>
+    <h2>Caso já seja cliente favor fazer login no sistema clicando <a href="index.php">aqui</a></h2>
     <div class="data-hora">
         <?php 
             date_default_timezone_set("America/Sao_Paulo");
