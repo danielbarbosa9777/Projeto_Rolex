@@ -19,6 +19,9 @@ include 'protect.php'
     <p>Ou para os mais conhecidos apenas <?php echo $_SESSION['ultimo_nome']?></p>
 
     <p><a href="logout.php">SAIR</a></p>
-     
+    <div class="data-hora">
+        <?php include 'rodape.php'
+        ?>
+    </div>     
 </body>
 </html>

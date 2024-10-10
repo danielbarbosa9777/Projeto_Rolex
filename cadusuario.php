@@ -48,10 +48,7 @@
     </div>
     <h2>Caso já seja cliente favor fazer login no sistema clicando <a href="index.php">aqui</a></h2>
     <div class="data-hora">
-        <?php 
-            date_default_timezone_set("America/Sao_Paulo");
-            print "Hoje é dia " . date("d:M:Y ");
-            print "e a hora atual é " . date("G:i:s");
+        <?php include 'rodape.php'
         ?>
     </div>
 </body>

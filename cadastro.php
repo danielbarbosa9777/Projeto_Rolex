@@ -63,5 +63,9 @@
          ?>
          <p><a href="index.php">LOGIN</a></p>
      </main>
+     <div class="data-hora">
+        <?php include 'rodape.php'
+        ?>
+    </div>
  </body>
  </html>

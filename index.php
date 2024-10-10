@@ -66,6 +66,10 @@ if(isset($_POST['username']) || isset($_POST['senha'])){
         </form>
     </div>
     <p>Caso não tenha login clique <a href="cadusuario.php">aqui</a> para criar</p>
+    <div class="data-hora">
+        <?php include 'rodape.php'
+        ?>
+    </div>
 
 
     
