@@ -16,7 +16,7 @@ body {
 }
 
 .data-hora {
-    position: absolute;
+    position: fixed;
     bottom: 10px; /* Distância do canto inferior */
     right: 10px;  /* Distância do canto direito */
     font-family: Arial, sans-serif;

@@ -15,9 +15,17 @@
                 // Recebe os dados do formulário
                 $username = $_POST['username'];
                 $senha = $_POST['senha'];
+                $confirm_password = $_POST['confirm-password'];
                 $email = $_POST['email'];
                 $last_name = $_POST['last_name'];
                 $first_name = $_POST['first_name'];
+
+                // Verifica se as senhas são correspondentes
+                if ($confirm_password != $senha){
+                    echo "As senhas divergem, por favor, tente novamente.";
+                     // Redireciona para outra página após 3 segundos
+                    header("refresh:5;url=cadusuario.php");
+                }
 
                  // Verifica se o usuário já existe
                  $sql_check = "SELECT * FROM users WHERE username = ? OR email = ?";
@@ -46,7 +54,7 @@
                         echo "Novo registro criado com sucesso!";
                         $nome = $_POST["first_name"];
                         $senha = $_POST["senha"];
-                        print "Olá $nome, sua senha é $senha";
+                        print "Olá $nome!, Seja bem vindo(a)";
                      } else {
                         echo "Erro: " . $sql . "<br>" . $mysqli->error;
                      }
